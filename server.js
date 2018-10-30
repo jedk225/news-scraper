@@ -32,9 +32,15 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+// mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
+if (process.env.MONGOD_URI) {
+    mongoose.connect(process.env.MONGOD_URI)
+} else {
+    mongoose.connect("mongodb://localhost/mongoHeadlines")
+}
 
 // Routes
 app.get("/", function (req, res) {

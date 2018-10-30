@@ -6,19 +6,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="#">Home
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">Articles</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
+                <a class="nav-link" href="#">Saved</a>
             </li>
         </ul>
     </div>
@@ -27,23 +24,23 @@
 <div class="jumbotron text-center">
     <div class="jumbo-text">
         <h1>Rams Scraper</h1>
-        <h3>Scraping the Official Subreddit of the LA Rams</h3>
+        <h3>Scraping the Official Website of the LA Rams</h3>
     </div>
 </div>
 
 <div class="container" id="wrapper">
     <h1 class="text-center">Articles</h1>
     <hr class="small">
-        <div id="articles">
-            {{#each articles}}
-            <div class="article-header">
-                <h2>{{this.title}}</h2>
-                <a class="btn btn-danger btn-sm" href="#" role="button" data-id="{{this._id}}">SAVE ARTICLE</a>
-                <div class="article-info">
-                    <p class="article-summary">{{this.summary}}</p>
-                    <p class="article-link">{{this.link}}</p>
-                </div>
+    <div id="articles">
+        {{#each articles}}
+        <div class="article-header">
+            <h2>{{this.title}}</h2>
+            <a class="btn btn-danger btn-sm" href="#" role="button" data-id="{{this._id}}">SAVE ARTICLE</a>
+            <div class="article-info">
+                <p class="article-summary">{{this.summary}}</p>
+                <p class="article-link">{{this.link}}</p>
             </div>
-            {{/each}}
         </div>
+        {{/each}}
+    </div>
 </div>

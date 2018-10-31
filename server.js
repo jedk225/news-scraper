@@ -65,10 +65,9 @@ app.get("/scrape", function (req, res) {
                 .attr("title");
             result.link = "https://www.therams.com" + $(this)
                 .attr("href");
-            // result.summary = $(this)
-            //     .children("div", ".d3-o-media-object__body")
-            //     .children("div", ".d3-o-media-object__summary")
-            //     .text()
+            result.summary = $(this)
+                .find(".d3-o-media-object__summary")
+                .text()
 
             // Create a new Article using the `result` object built from scraping
             db.Article.create(result)

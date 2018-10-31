@@ -1,7 +1,7 @@
 # news-scraper
 Project that allows users to view and leave comments on the latest news regarding the LA Rams. The web-app utilizes Mongoose and Cheerio to scrape news from the official Rams website.  
 
-# Link to original webiste
+# Link to original website
 https://www.therams.com/news/
 
 # Link to Deployed App

@@ -16,14 +16,28 @@
 </head>
 
 <body>
-    <img src="https://static.clubs.nfl.com/rams/nd8jgol9iy7wyhx7tn2i" alt="rams image" id="rams-image">
-   
-    <div class="jumbotron text-center">
-            <div class="jumbo-text">
-                <h1 style="color: rgb(2, 33, 69)">LA Rams News Scraper</h1>
-                <h3 style="color: rgb(2, 33, 69)">Scraping the official website of the Los Angeles Rams</h3>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Mongo Scraper</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button class="btn btn-light" type="button" id="scrape">Scrape for New Articles</button>
+                </li>
+            </ul>
         </div>
+    </nav>
+    <img src="https://static.clubs.nfl.com/rams/nd8jgol9iy7wyhx7tn2i" alt="rams image" id="rams-image">
+
+    <div class="jumbotron text-center">
+        <div class="jumbo-text">
+            <h1 style="color: rgb(2, 33, 69)">LA Rams News Scraper</h1>
+            <h3 style="color: rgb(2, 33, 69)">Scraping the official website of the Los Angeles Rams</h3>
+        </div>
+    </div>
     <div class="container">
         <div id="articles"></div>
         <div id="notes"></div>

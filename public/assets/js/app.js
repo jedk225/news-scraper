@@ -1,12 +1,15 @@
 // Grab the articles as a json
-$.getJSON("/articles", function (data) {
-    // For each one
-    for (var i = 0; i < data.length; i++) {
-        // Display the apropos information on the page
-        $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
-    }
-});
+function getArticles() {
+    $.getJSON("/articles", function (data) {
+        // For each one
+        for (var i = 0; i < data.length; i++) {
+            // Display the apropos information on the page
+            $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+        }
+    });
+};
 
+getArticles();
 
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function () {
@@ -94,3 +97,13 @@ $(document).on("click", "#deletenote", function () {
     $("#titleinput").val("");
     $("#bodyinput").val("");
 });
+
+// Button to scrape Rams website for new articles
+$(document).on("click", "#scrape", function () {
+    $.ajax({
+        method: "GET",
+        url: "/scrape"
+    }).then(function (data) {
+        getArticles();
+    })
+})
